@@ -55,7 +55,7 @@ img {
 
 .header nav {
   position: relative;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   height: 70px;
   color: #777;
   background-color: #fff;
