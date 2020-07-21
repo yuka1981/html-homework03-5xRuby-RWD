@@ -6,14 +6,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
+    #menu_control {
+      position: absolute;
+    }
+
+    #menu_control:checked~.header nav {
+      top: 70px;
+    }
+
+    .header {
+      height: 70px;
+      color: #777;
+      background-color: #fff;
+      position: relative;
+      outline: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .header a {
+      text-decoration: none;
+      color: #d90845;
+      display: flex;
+      align-items: center;
+    }
+
+    .header a span {
+      margin-left: 4px;
+      display: block;
+    }
+
+    .logo img {
+      vertical-align: middle;
+    }
+
+    .menu_btn {
+      width: 50px;
+      height: 50px;
+      display: block;
+      background-color: #d90845;
+      position: relative;
+      border-radius: 2px;
+    }
+
+    .menu_btn span {
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      display: block;
+      overflow: hidden;
+    }
+
+    .menu_btn::before {
+      content: '';
+      position: absolute;
+      display: block;
+      border-radius: 2px;
+      height: 3px;
+      width: 40px;
+      background-color: #fff;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      box-shadow: 0 10px 0 #fff, 0 -10px 0 #fff;
+    }
+
+    nav {
+      width: 100%;
+      /* height: calc(100vh - 70px); */
+      /* background-color: #ccc; */
+      position: absolute;
+      top: -190px;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* transition: .2s; */
+    }
+
+    nav a {
+      /* display: block; */
+      color: #777;
+      text-decoration: none;
+      padding: 2px 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      .menu_btn {
+        display: none;
+      }
+
+      .header {
+        display: flex;
+      }
+
+      nav {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <input type="checkbox" name="" id="menu_control">
 
+  <div class="header">
+    <div class="logo">
+      <a href="#"><img src="images/logo-c473f739.png" alt=""><span class="logo-txt">專業程式教育機構</span></a>
+    </div>
 
+    <label for="menu_control" class="menu_btn">
+      <span>navbtn</span>
+    </label>
+
+    <nav class="list-area">
+      <a href="#"><span><i class="far fa-gem"></i></span>線上課程</a>
+      <a href="#"><span><i class="far fa-compass fa-lg"></span></i>ASTRO Camp</a>
+      <a href="#"><span><i class="fas fa-bolt"></i></span>全方位課程<span><img src="images/new-icon.svg" alt=""></span></a>
+      <a href="#">短期課程</a>
+      <a href="#">專案開發</a>
+      <a href="#">專欄文章</a>
+      <a href="#">最新消息</a>
+    </nav>
+  </div>
 
 </body>
 
