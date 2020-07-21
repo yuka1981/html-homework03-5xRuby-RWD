@@ -24,7 +24,7 @@ img {
   line-height: 1.5;
 }
 
-.section:nth-child(odd){
+.section:nth-child(even){
   background-color: #f7f7f7;
 }
 
